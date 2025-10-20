@@ -7,9 +7,7 @@ import 'ui/scol_list_dialog.dart';
 import 'package:flutter/foundation.dart'; // for kIsWeb
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 void main() {
-  // التهيئة للـ desktop أو web
   if (!kIsWeb) {
-    // إذا كان app desktop أو test
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
   }
@@ -42,7 +40,7 @@ class _ShListState extends State<ShList> {
   void initState() {
     super.initState();
     dialog = ScolListDialog();
-    helper.openDb(); // <-- أضف هذي السطر هنا
+    helper.openDb();
   }
 
 
@@ -95,7 +93,7 @@ class _ShListState extends State<ShList> {
           );
           if (refresh == true) {
             setState(() {
-              showData(); // refresh بعد الحفظ
+              showData();
             });
           }
         },

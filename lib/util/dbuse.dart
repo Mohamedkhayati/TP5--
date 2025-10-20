@@ -38,7 +38,7 @@ class DbUse {
   Future testDb() async {
     db = await openDb();
     await db?.execute('INSERT OR REPLACE INTO classes(codClass,nomClass,nbreEtud) VALUES (101, "DSI31", 28)');
-    await db?.execute('INSERT OR REPLACE INTO etudiants(id,codClass,nom,prenom,datNais) VALUES (1, 101, "Ben Foulen", "Foulen", "05/10/2023")');
+    await db?.execute('INSERT OR REPLACE INTO etudiants(id,codClass,nom,prenom,datNais) VALUES (2, 101, "Ben Foulen", "Foulen", "05/10/2023")');
     List lists = await db!.rawQuery('select * from classes');
     List items = await db!.rawQuery('select * from etudiants');
     print(lists.isNotEmpty ? lists[0].toString() : 'no classes');
